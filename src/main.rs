@@ -7,5 +7,5 @@ fn main() {
     io::stdin()
         .read_line(&mut operator)
         .expect("Failed to read line!");
-    //write operations tomorrow.
+    //write operations tomorrow
 }
