@@ -36,6 +36,7 @@ What is the number you want to convert?");
 
 //1. Program CL argümanlarını alsın. Eğer yeterli CL argümanı yoksa 2. adıma geçsin, yeterli CL argümanı varsa 3. adıma geçsin, fazla argüman varsa hata versin. ++
 //2. Eğer CL'den sayı alınmadıysa uyarı geçsin ve yine de sayıyı sorsun. ++
-//3. Program argümanı parse'lasın. Eğer girilen sayı parse'lanamıyorsa paniklesin.
-//4. Parse'lanan sayının C->F ve F -> C değerleri yazdırılsın. Eğer FC veya CF envvarları kullanılmışsa yalnızca ilgili işlemi bastırsın.
+//3. Program argümanı parse'lasın. Eğer girilen sayı parse'lanamıyorsa paniklesin. Ayrıca bu adımda artık lib.rs'yi kullanmaya başlayabiliriz.
+//3.1 Bu adımda notta bahsettiğimiz struct ve enum oluşturulabilir, Envvar'lar sorgulanabilir. Envvar alınıp alınmadığı programda struct oluşturulmadan önce teyit edilmeli.
+//4. Parse'lanan sayının C -> F ve F -> C değerleri yazdırılsın. Eğer FC veya CF envvarları kullanılmışsa yalnızca ilgili işlemi bastırsın.
 //Not: Sayı değeri ve CF/FC envvarı kullanılıp kullanılmaması bir struct'ta birleştirilebilir. Envvar değerinin CF veya FC olması enum olabilir.
