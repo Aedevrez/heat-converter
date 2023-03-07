@@ -11,6 +11,8 @@ fn main() {
         process::exit(1);
     });
 
+    let degree: i64 = degree_parser(&degree);
+
     println!("{degree}");
 }
 
@@ -20,6 +22,6 @@ fn main() {
 //3.1 Bu adımda notta bahsettiğimiz struct ve enum oluşturulabilir, Envvar'lar sorgulanabilir. Envvar alınıp alınmadığı programda struct oluşturulmadan önce teyit edilmeli.
 //3.2 lib.rs'yi oluştur. ++
 //3.3 Degree struct'ını oluştur.
-//3.4 degree_parser ve Degree::build fonksiyonlarını yaz.
+//3.4 degree_parser ++ ve Degree::build fonksiyonlarını yaz.
 //4. Parse'lanan sayının C -> F ve F -> C değerleri yazdırılsın. Eğer FC veya CF envvarları kullanılmışsa yalnızca ilgili işlemi bastırsın.
 //Not: Sayı değeri ve CF/FC envvarı kullanılıp kullanılmaması bir struct'ta birleştirilebilir. Envvar değerinin CF veya FC olması enum olabilir.

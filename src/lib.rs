@@ -20,3 +20,19 @@ What is the number you want to convert?");
         .expect("Could not read from Command Line.");
     Ok(value.trim().to_string())
 }
+
+pub fn degree_parser(value: &String) -> i64 {
+    let degree = (*value).clone().parse::<i64>().expect("Failed to parse input!");
+    degree
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parse_test() {
+        let string = String::from("123");
+        assert_eq!(123, degree_parser(&string));
+    }
+}
