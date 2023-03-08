@@ -1,5 +1,16 @@
 use std::io;
 
+pub enum ConvMode {
+    CtoF,
+    FtoC,
+    None,
+}
+
+pub struct Degree {
+    pub value: i64,
+    pub mode: ConvMode,
+}
+
 pub fn input_checker(args: &[String]) -> Result<String, &'static str> {
     if args.len() < 2 {
         return input_reminder(); //Temporary
