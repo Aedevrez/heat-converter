@@ -62,6 +62,14 @@ pub fn run(num: i64) {
     println!("{:#?}", degree);
 } //Temporary
 
+pub fn c_to_f_converter(num: i64) -> f64 {
+    ((num as f64) * 9.0 / 5.0) + 32.0
+}
+
+pub fn f_to_c_converter(num: i64) -> f64 {
+    ((num as f64) - 32.0) * 5.0 / 9.0
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -70,5 +78,17 @@ mod tests {
     fn parse_test() {
         let string = String::from("123");
         assert_eq!(123, degree_parser(&string));
+    }
+
+    #[test]
+    fn c_to_f_tester() {
+        let val = 0;
+        assert_eq!(32.0, c_to_f_converter(val));
+    }
+
+    #[test]
+    fn f_to_c_tester() {
+        let val = 32;
+        assert_eq!(0.0, f_to_c_converter(val));
     }
 }
