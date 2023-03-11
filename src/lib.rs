@@ -59,7 +59,14 @@ pub fn degree_parser(value: &String) -> i64 {
 
 pub fn run(num: i64) {
     let degree = Degree::build(num);
-    println!("{:#?}", degree);
+    match degree.mode {
+        ConvMode::None => {
+            print_fahrenheit(&degree);
+            print_celsius(&degree);
+        },
+        ConvMode::CtoF => print_fahrenheit(&degree),
+        ConvMode::FtoC => print_celsius(&degree),
+    }
 } //Temporary
 
 pub fn c_to_f_converter(num: i64) -> f64 {
@@ -68,6 +75,16 @@ pub fn c_to_f_converter(num: i64) -> f64 {
 
 pub fn f_to_c_converter(num: i64) -> f64 {
     ((num as f64) - 32.0) * 5.0 / 9.0
+}
+
+pub fn print_fahrenheit(degree: &Degree) {
+    let fahrenheit = c_to_f_converter(degree.value);
+    println!("{} Celsius = {:.2} Fahrenheit", format!("{}", degree.value), fahrenheit);
+}
+
+pub fn print_celsius(degree: &Degree) {
+    let celsius = f_to_c_converter(degree.value);
+    println!("{} Fahrenheit = {:.2} Celsius", format!("{}", degree.value), celsius);
 }
 
 #[cfg(test)]

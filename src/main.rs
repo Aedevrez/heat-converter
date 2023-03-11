@@ -23,5 +23,6 @@ fn main() {
 //3.2 lib.rs'yi oluştur. ++
 //3.3 Degree struct'ını oluştur. ++
 //3.4 degree_parser ++ ve Degree::build fonksiyonlarını yaz. ++
-//4. Parse'lanan sayının C -> F ve F -> C değerleri yazdırılsın. Eğer FC veya CF envvarları kullanılmışsa yalnızca ilgili işlemi bastırsın. Bu aşama artık run fonksiyonu içerisinde yapılsın.
+//4. Parse'lanan sayının C -> F ve F -> C değerleri yazdırılsın. Eğer FC veya CF envvarları kullanılmışsa yalnızca ilgili işlemi bastırsın. Bu aşama artık run fonksiyonu içerisinde yapılsın. ++
 //Not: Sayı değeri ve CF/FC envvarı kullanılıp kullanılmaması bir struct'ta birleştirilebilir. Envvar değerinin CF veya FC olması enum olabilir. ++
+//5. Degree parser fonksiyonunda hata ayıklama daha kullanıcı dostu bir şekilde yapılabilir.
