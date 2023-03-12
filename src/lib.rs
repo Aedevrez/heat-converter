@@ -1,5 +1,6 @@
 use std::io;
 use std::env;
+use std::error::Error;
 
 #[derive(Debug)]
 pub enum ConvMode {
@@ -52,9 +53,8 @@ What is the number you want to convert?");
     Ok(value.trim().to_string())
 }
 
-pub fn degree_parser(value: &String) -> i64 {
-    let degree = (*value).clone().parse::<i64>().expect("Failed to parse input!");
-    degree
+pub fn degree_parser(value: &String) -> Result<i64, Box<dyn Error>> {
+    Ok((*value).clone().parse::<i64>()?)
 }
 
 pub fn run(num: i64) {
