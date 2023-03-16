@@ -32,14 +32,17 @@ impl Degree {
     }
 }
 
-pub fn input_checker(args: &[String]) -> Result<String, &'static str> {
-    if args.len() < 2 {
-        return input_reminder();
-    } else if args.len() > 2 {
-        return Err("Too many arguments!");
-    } else {
-        let degree = args[1].clone();
-        Ok(degree)
+pub fn input_checker(mut args: impl Iterator<Item = String>) -> Result<String, &'static str> {
+    args.next();
+
+    let result = match args.next() {
+        Some(degree) => Ok(degree),
+        None => input_reminder(),
+    };
+
+    match args.next() {
+        Some(_) => Err("Too many arguments!"),
+        None => result,
     }
 }
 
