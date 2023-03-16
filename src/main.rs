@@ -4,9 +4,7 @@ use std::process;
 use heat_converter::*;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let degree = input_checker(&args).unwrap_or_else( |err| {
+    let degree = input_checker(env::args()).unwrap_or_else( |err| {
         eprintln!("Problem while taking input: {err}");
         process::exit(1);
     });
